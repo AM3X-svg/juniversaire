@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 2</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>Question 2</h1>
+      <p>Quel est le nom de ce chat ??</p>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="false">Chaussette</button>
+        <button class="btn answer" data-correct="false">Popo</button>
+        <button class="btn answer" data-correct="true">Babouche</button>
+        <button class="btn answer" data-correct="false">Pipi</button>
+        <div>
+            <img class="imagebab" src="img/168A007B-0027-4830-9478-D0B26EAF1F01_1_105_c.jpeg" width="504" height="672" alt="bab">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "page3.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi2.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

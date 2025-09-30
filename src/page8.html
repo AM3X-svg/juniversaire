@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 8</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>question 7</h1>
+      <p>as tu confiance en tes proches ? <br>
+        si oui choisis en un ☝️
+      </p>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="nathan">nathan</button>
+        <button class="btn answer" data-correct="papa">papa</button>
+        <button class="btn answer" data-correct="margaux">margaux</button>
+        <button class="btn answer" data-correct="chawki">chawki</button>
+        <button class="btn answer" data-correct="maman">maman</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "nathan") {
+          // Bonne réponse → prochaine question
+            window.location.href = "pers1_nathan.html";
+        } else if (correct == "papa") {
+          // Mauvaise réponse → mini défi
+            window.location.href = "pers2_papa.html";
+        } else if (correct == "margaux") {
+            window.location.href = "pers3_margaux.html";
+        } else if (correct == "chawki"){
+            window.location.href = "pers4_chawki.html";
+        } else if (correct == "maman") {
+            window.location.href = "pers5_maman.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

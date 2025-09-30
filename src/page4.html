@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 4</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>C'est vrai ??</h1>
+        <div>
+            <img class="imagebab" src="img/341D12D0-D1C0-4F7D-845D-16FD26AE109A_4_5005_c.jpeg" widht="360" height="360" alt="j'temange">
+        </div>
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="true">Oui</button>
+        <button class="btn answer" data-correct="false">Non</button>
+      </div>
+      <div>
+          <img class="image" src="img/blue-ball.webp" widht="auto" height="auto" alt="mehenu">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "victoire.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi4.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

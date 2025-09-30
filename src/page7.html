@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 7</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>question 6</h1>
+      <p>si demain je venais a mourir<br>
+        ca serait quoi la premiere chose que tu ferais ?
+      </p>
+      <h1 class="delayed-text">👁️👁️</h1>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="true">faire caca</button>
+        <button class="btn answer" data-correct="true">couper mon zizi et le manger</button>
+        <button class="btn answer" data-correct="false">pleurer</button>
+        <button class="btn answer" data-correct="true">exploser -genre vraiment-</button>
+        <button class="btn answer" data-correct="true">faire pipi</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "choque.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi7.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

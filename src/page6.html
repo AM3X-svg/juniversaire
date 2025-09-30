@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 6</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>question 5</h1>
+      <p>je vais savoir si t'es attentive,<br>
+        combien on a de flamme sur snap aujourd'hui ?
+      </p>
+      <img class="imgappering" src="img/342A9B47-091B-4557-A838-C6DC4E94F646_1_105_c.jpeg" height="200" width="200" alt="cato">
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="false">54</button>
+        <button class="btn answer" data-correct="false">1000</button>
+        <button class="btn answer" data-correct="false">59</button>
+        <button class="btn answer" data-correct="true">57</button>
+        <button class="btn answer" data-correct="false">3</button>
+        <button class="btn answer" data-correct="false">60</button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "page7.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi6.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 5</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>YEEEPIIII</h1>
+      <h2>Question 4</h2>
+      <p>comment tu vas jusqu'ici ?</p>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="true">bien</button>
+        <button class="btn answer" data-correct="false">pas bien</button>
+        <div>
+            <img class="image" src="https://media.tenor.com/_Gh3ezRN2P0AAAAi/лютый-пон-лайк.gif" widht="300" height="300">
+            <img class="image" src="https://media.tenor.com/dOyGBP3SQtYAAAAi/big-thumbs-down-emoticon-emoticon.gif" widht="300" height="300">
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "joie.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi5.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

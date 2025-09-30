@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 1</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>Question 1</h1>
+      <p>Quand était notre premier date ?</p>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="true">16 aout</button>
+        <button class="btn answer" data-correct="false">18 aout</button>
+        <div>
+            <img class="imageju" src="img/54A97A8B-44DF-4DB4-BFE2-CFC6073353DD_1_102_o.jpeg" width="70" height="70" alt="ju">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "page2.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi1.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

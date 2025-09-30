@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ending</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>J'èspere que ce ptit jeux t'as plu</h1>
+      <h2>Que j'ai été a la hauteur de tes attentes</h2>
+      <p>je te laisse appuyer sur moi pour avoir ton vrai cadeau</p>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="final">
+            <img class="image" src="img/89798B2C-AFB8-4417-B407-F692D2F2B2F6_1_105_c.jpeg" widht="300" height="300">
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "final") {
+          // Bonne réponse → prochaine question
+          window.location.href = "final.html";
+        } 
+        
+      });
+    });
+  </script>
+</body>
+</html>

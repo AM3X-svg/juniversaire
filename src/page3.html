@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Question 3</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="nom">
+      <h1>Question 3</h1>
+      <p>Est-ce que tu m'aimes ?</p>
+
+      <div class="game__container">
+        <!-- Boutons de réponse -->
+        <button class="btn answer" data-correct="true">Oui</button>
+        <button class="btn answer" data-correct="false">Non</button>
+        <div>
+            <img class="imageju2" src="img/9C78C014-AEE4-4695-B0BD-A76DD573B75D_1_105_c.jpeg" width="332,5" height="591" alt="ju2">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Récupère tous les boutons
+    const answers = document.querySelectorAll(".answer");
+
+    answers.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const correct = btn.getAttribute("data-correct");
+
+        if (correct === "true") {
+          // Bonne réponse → prochaine question
+          window.location.href = "page4.html";
+        } else {
+          // Mauvaise réponse → mini défi
+          window.location.href = "defi3.html";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
